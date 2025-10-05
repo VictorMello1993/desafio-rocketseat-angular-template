@@ -5,7 +5,10 @@ import { Injectable } from '@angular/core';
 })
 export class UserAuthService {
   getUserToken(){
-    //TODO: Recuperar token do Localstorage
-    return 'token_gerado_da_rota_de_login';
+    return localStorage.getItem('auth-token') || '';
+  }
+
+  setUserToken(token: string){
+    localStorage.setItem('auth-token', token)
   }
 }
