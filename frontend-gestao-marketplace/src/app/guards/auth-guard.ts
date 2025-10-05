@@ -9,7 +9,7 @@ export const authGuard: CanActivateFn = async (route, state) => {
   const _userAuthService = inject(UserAuthService);
   const _router = inject(Router);
 
-  //Não possui token no localstorage do navegador
+  //Recupera o token do localstorage
   const HAS_TOKEN = _userAuthService.getUserToken();
 
   if(!HAS_TOKEN){
