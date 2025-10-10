@@ -2,11 +2,11 @@
   {
     "id": 1,
     "email": "novo@example.com",
-    "password": "sua_senha"
+    "password": ""
   },
   {
     "id": 2,
     "email": "teste@teste.com",
-    "password": "sua_senha"
+    "password": "$2b$10$Pf7NcwvzHg4x/VpR9ZWTU.SrY6dgbYZJvtAlvqGR4uKCHOf2/S5Tq"
   }
 ]

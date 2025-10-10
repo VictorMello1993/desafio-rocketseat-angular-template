@@ -3,6 +3,7 @@ import {FormControl, FormGroup, ReactiveFormsModule, Validators} from '@angular/
 import { UserService } from '../../services/user';
 import { UserAuthService } from '../../services/user-auth';
 import { Router } from '@angular/router';
+import { take } from 'rxjs';
 
 @Component({
   selector: 'app-login',
@@ -30,6 +31,7 @@ export class Login {
     //Chamar a rota de login
     this._userService.login(this.useForm.get('email')?.value as string,
                             this.useForm.get('password')?.value as string)
+                     .pipe(take(1))
                      .subscribe({
                       next: (response) => {
                         this.loginErrorMessage = '';
