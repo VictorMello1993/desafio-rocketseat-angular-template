@@ -1,3 +1,4 @@
+import { IProductsResponse } from './../interfaces/products-response';
 import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
 import { INewProductRequest } from '../interfaces/new-product-request';
@@ -12,5 +13,9 @@ export class ProductsService {
 
     saveProduct(product: INewProductRequest): Observable<INewProductResponse>{
       return this._httpClient.post<INewProductResponse>('http://localhost:3000/api/products', product)
+    }
+
+    getProducts(): Observable<IProductsResponse>{
+      return this._httpClient.get<IProductsResponse>('http://localhost:3000/api/products')
     }
 }
