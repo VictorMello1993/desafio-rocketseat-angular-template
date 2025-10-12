@@ -8,5 +8,10 @@
     "id": 2,
     "email": "teste@teste.com",
     "password": "$2b$10$Pf7NcwvzHg4x/VpR9ZWTU.SrY6dgbYZJvtAlvqGR4uKCHOf2/S5Tq"
+  },
+  {
+    "id": 3,
+    "email": "fulano@teste.com",
+    "password": "$2b$10$oDvKhL.KhS5b8yyPoiQOkOMqQzLsLIHU1qE.1F2jXIImiQHLyMvle"
   }
 ]
