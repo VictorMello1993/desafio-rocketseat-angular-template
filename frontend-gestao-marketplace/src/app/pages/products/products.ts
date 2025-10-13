@@ -38,6 +38,7 @@ export class Products implements OnInit{
   }
 
   filterProducts(){
+    console.log('Formulario submetido')
     const title = this.filterForm.value.title?.toLowerCase()
     const status = this.filterForm.value.status?.toLowerCase()
 

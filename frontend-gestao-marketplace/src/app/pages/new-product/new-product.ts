@@ -3,6 +3,7 @@ import { Component, inject } from '@angular/core';
 import { ProductsService } from '../../services/products';
 import { INewProductRequest } from '../../interfaces/new-product-request';
 import { take } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-new-product',
@@ -13,6 +14,8 @@ import { take } from 'rxjs';
 export class NewProduct {
   productImageBase64 = '';
   successMessage = ''
+
+  private readonly _router = inject(Router)
 
   productForm = new FormGroup({
     title: new FormControl('', [Validators.required]),
@@ -66,5 +69,9 @@ export class NewProduct {
      }
 
      reader.readAsDataURL(file);
+  }
+
+  cancel() {
+    this._router.navigate(['/products'])
   }
 }

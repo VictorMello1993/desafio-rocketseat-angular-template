@@ -14,7 +14,7 @@ import { take } from 'rxjs';
 export class Login {
   loginErrorMessage = '';
 
-  useForm = new FormGroup({
+  userForm = new FormGroup({
     email: new FormControl('', [Validators.required, Validators.email]),
     password: new FormControl('', [Validators.required])
   })
@@ -24,13 +24,13 @@ export class Login {
   private readonly _router = inject(Router);
 
   login() {
-    if(this.useForm.invalid) {
+    if(this.userForm.invalid) {
       return;
     }
 
     //Chamar a rota de login
-    this._userService.login(this.useForm.get('email')?.value as string,
-                            this.useForm.get('password')?.value as string)
+    this._userService.login(this.userForm.get('email')?.value as string,
+                            this.userForm.get('password')?.value as string)
                      .pipe(take(1))
                      .subscribe({
                       next: (response) => {
